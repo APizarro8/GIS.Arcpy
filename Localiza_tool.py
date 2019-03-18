@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
 #Ejercicio 3 practica 1. 
-#Proposito:  
-#Autor: Alicia Pizarro
-#Fecha: 29/01/2018
-
-# -*- coding: utf-8 -*-
-#Ejercicio 3 practica 1. 
-#Proposito: La finalidad de esta práctica es incluir un script basado en lo realizado en el ejercicio 1 como herramienta de ArcGIS. 
+#Proposito: La finalidad de esta práctica es incluir un script basado en lo realizado en el ejercicio 1
+#como herramienta para ArcGIS. 
 #Autor: Alicia Pizarro
 #Fecha: 01/02/2018
 

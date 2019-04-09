@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
 #Ejercicio 3 practica 1. 
-#Proposito: La finalidad de esta práctica es incluir un script basado en lo realizado en el ejercicio 1
-#como herramienta para ArcGIS. 
+#Proposito: La finalidad de esta práctica ha sido desarrollar un script que crease una herramienta para ArcGIS que localizase
+#una zona en concreto, donde las diferentes variables de entrada se han recortado corforme a la capa de entrada, 
+#luego se ha realizado un buffer sobre ellas, se disuelva y se unan en una única zona.   
 #Autor: Alicia Pizarro
 #Fecha: 01/02/2018
 
+############################################################################################################################
+#IMPORTAR MODULOS DE ARCPY
 import os
 import arcpy
 
-#Sobreescribir en caso de que ya exista
+#SOBREESCRIBIR EN CASO DE QUE YA EXISTA
 arcpy.env.overwriteOutput = True
 
-#Establecer el espacio de trabajo
+############################################################################################################################
+#ESTABLECER EL ESPACIO DE TRABAJO
+##ENTRADA DE VARIABLES 
 arcpy.env.workspace = arcpy.GetParameterAsText(0)
 nucleo = os.path.join(arcpy.GetParameterAsText(1))
 distancia_nucleo = arcpy.GetParameterAsText(2)
@@ -20,26 +25,29 @@ autopista = os.path.join(arcpy.GetParameterAsText(4))
 distancia_carretera = arcpy.GetParameterAsText(5)
 salida = arcpy.GetParameterAsText(6)
 
-municipios = os.path.join(arcpy.env.workspace, "Municipios.shp")
-zona_estudio = os.path.join(salida, "Municipios_estudio.shp")
+municipios = os.path.join(arcpy.env.workspace, "xxDATAxxENTRADAxx.shp")
+zona_estudio = os.path.join(salida, "xxxDATAxxSALIDAxx.shp")
 
-#Obtener la zona de estudio eliminando aquellos registros que se correspondan con municipios cuyo campo 'Zona' sea: Municipio de Madrid o 
-#Norte Metropolitano o Este Metropolitano o Sur Metropolitano u Oeste Metropolitano.
-municipioUp = arcpy.UpdateCursor(municipios, '', '', 'Zona') #Crear un cursor que actualiza las filas Municipios apuntando al campo 'Zona'.
+#Obtener la zona de estudio eliminando aquellos registros que se correspondan con municipios cuyo campo 'Zona' sea: 
+#Municipio de Madrid o Norte Metropolitano o Este Metropolitano o Sur Metropolitano u Oeste Metropolitano.
+#Crear un cursor que actualiza las filas Municipios apuntando al campo 'Zona'.
+municipioUp = arcpy.UpdateCursor(municipios, '', '', 'Zona') 
 
 try:
     for municipios_row in municipioUp:
         zona_row = municipios_row.getValue('Zona') #Obtener el valor del campo 'Zona'
-        if zona_row == "Nordeste Comunidad" or zona_row == "Sierra Central" or zona_row == "Sierra Norte" or zona_row =="Sierra Sur" or zona_row == "Sudeste Comunidad" or zona_row == "Sudoeste Comunidad":
+        if zona_row == "Nordeste Comunidad" or zona_row == "Sierra Central" or zona_row == "Sierra Norte" or zona_row ==
+        "Sierra Sur" or zona_row == "Sudeste Comunidad" or zona_row == "Sudoeste Comunidad":
             municipioUp.deleteRow(municipios_row) #Eliminar aquellos registros que no pertenecen a los registros de interes.
         
-    zona_estudio = os.path.join(salida, "Municipios_estudio.shp") #Creacion del limite de la capa de estudio
+    zona_estudio = os.path.join(salida, "xxxDATAxxSALIDAxx.shp") #Creacion del limite de la capa de estudio
     arcpy.Copy_management(municipios, zona_estudio)
-    print 'La capa sobre la zona de estudio ha sido creada como: "Municipios_estudio".'
+    print 'La capa sobre la zona de estudio ha sido creada como: "xxxDATAxxSALIDAxx".'
     print '=' * 50
-    
+
+#GESTION DE ERRORES 
 except:
-    print "EL cursor de actualizaci�n no se ha ejecutado"    
+    print "EL cursor de actualizacion no se ha ejecutado"    
     
 try:
     autovias_recorte = os.path.join(salida, "Autovias_recorte.shp")
@@ -75,6 +83,10 @@ try:
     localiza = os.path.join(salida, "zona_localiza.shp")
     arcpy.Select_analysis(in_features=zona_estudio_merge, out_feature_class=localiza, where_clause='excluir <> 1')
     
-
+############################################################################################################################
+#GESTION DE ERRORES 
 except:
     print "No se ha podido realizar la accion"
+    
+#################################################### FINISH RUN ############################################################
+############################################################################################################################

@@ -45,12 +45,12 @@ try:
     print '=' * 50
 
 ##############################################################################################################################
-#Gestion de errores   
+#GESTION DE ERRORES  
 except:
     arcpy.GetMessages()
     traceback.print_exc()
     
-#Tiempo de ejecución del proceso
+#TIEMPO DE EJECUCION DEL PROCESO
 tiempo_inicial = time.time() #Cuenta el tiempo de ejecución 
 tiempo_final = time.time() # Cuenta el tiempo final de ejecución.
 tiempo_empleado = tiempo_final - tiempo_inicial #Diferencia de tiempo de ejecución. 
@@ -58,6 +58,5 @@ print "El tiempo al comienzo ha sido de: ", tiempo_inicial, "segundos"
 print "El tiempo al final ha sido de: ", tiempo_final, "segundos"
 print "El programa ha tardado: ", tiempo_empleado, "segundos"
 
-#
-##
+####################################################### FINISH RUN ###########################################################
 ##############################################################################################################################

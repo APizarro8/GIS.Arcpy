@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
+#ASGINATURA: PROGRAMACIÓN AVANZADA
 #Ejercicio 3 practica 1. 
-#Proposito: La finalidad de esta práctica ha sido desarrollar un script que crease una herramienta para ArcGIS que localizase
+#Propósito: La finalidad de esta práctica ha sido desarrollar un script que crease una herramienta para ArcGIS que localizase
 #una zona en concreto, donde las diferentes variables de entrada se han recortado corforme a la capa de entrada, 
 #luego se ha realizado un buffer sobre ellas, se disuelva y se unan en una única zona.   
 #Autor: Alicia Pizarro
@@ -45,7 +46,6 @@ try:
     print 'La capa sobre la zona de estudio ha sido creada como: "xxxDATAxxSALIDAxx".'
     print '=' * 50
 
-#GESTION DE ERRORES 
 except:
     print "EL cursor de actualizacion no se ha ejecutado"    
     
@@ -83,8 +83,6 @@ try:
     localiza = os.path.join(salida, "zona_localiza.shp")
     arcpy.Select_analysis(in_features=zona_estudio_merge, out_feature_class=localiza, where_clause='excluir <> 1')
     
-############################################################################################################################
-#GESTION DE ERRORES 
 except:
     print "No se ha podido realizar la accion"
     

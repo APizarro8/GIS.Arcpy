@@ -4,6 +4,8 @@
 #Autor: Alicia Pizarro
 #Fecha: 25/01/2018
 
+###########################################################################################################################
+#IMPORTACION DE LIBRERIAS
 import arcpy
 import os
 import time
@@ -12,6 +14,7 @@ import traceback
 #Sobreescribir si es necesario
 arcpy.env.overwriteOutput = True 
 
+###########################################################################################################################
 #Establecer el espacio de trabajo
 arcpy.env.workspace = "D:\\Programacion\\Avanzada\\BCN_MADRID\\MADRID"
 
@@ -71,7 +74,8 @@ out_data_clip.close () #Cerrar el listado de salida
 
 print '=' * 50
 print "\n"
-  
+ 
+###########################################################################################################################
 #Tiempo de ejecución del proceso
 tiempo_inicial = time.time() #Cuenta el tiempo de ejecución 
 tiempo_final = time.time() # Cuenta el tiempo final de ejecución.

@@ -53,3 +53,15 @@ for capa in Lista_capas_salida:
     out_data_clip.write("\n")
 
 out_data_clip.close () #Cerrar el archivo
+
+###########################################################################################################################
+#Tiempo de ejecución del proceso
+tiempo_inicial = time.time() #Cuenta el tiempo de ejecución 
+tiempo_final = time.time() # Cuenta el tiempo final de ejecución.
+tiempo_empleado = tiempo_final - tiempo_inicial #Diferencia de tiempo de ejecución. 
+print "El tiempo al comienzo ha sido de: ", tiempo_inicial, "segundos"
+print "El tiempo al final ha sido de: ", tiempo_final, "segundos"
+print "El programa ha tardado: ", tiempo_empleado, "segundos"
+
+################################################# FINISH RUN #############################################################
+#########################################################################################################################

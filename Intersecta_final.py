@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-#Ejercicio 2 practica 1. 
-#Proposito: Crear un script para presentarlo como herramienta en ArcGIS. 
+#Propósito: Crear un script para presentarlo como herramienta en ArcGIS. 
 #Autor: Alicia Pizarro
 #Fecha: 25/01/2018
 
 ###########################################################################################################################
-#IMPORTACION DE LIBRERIAS
+#IMPORTACIÓN DE LIBRERÍAS
 import arcpy
 import os
 import time
@@ -28,7 +27,7 @@ if not os.path.exists(salida): #Si el directorio no existe, crealo.
 #Listar capas entrada
 Lista_capas_entrada = arcpy.ListFeatureClasses() #Listar las capas
     
-#Abrirmos el archivo en modo escritura, que como no existe lo crea.
+#Abrir el archivo en modo escritura, que como no existe lo crea.
 out_data = open ("D:\\Programacion\\Avanzada\\ListadoEntrada.txt", "w") 
 for capa in Lista_capas_entrada:
     out_data.write(capa)

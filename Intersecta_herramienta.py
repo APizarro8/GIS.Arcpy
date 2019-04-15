@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
-##PROGRAMACIÓN AVANZADA  
+# -*- coding: utf-8 -*- 
 #Propósito: Crear un script para presentarlo como herramienta en ArcGIS. 
 #Autor: Alicia Pizarro
 #Fecha: 25/01/2018
 
+#######################################################################################################################
 ## IMPORTACIÓN DE LIBRERÍAS 
 import arcpy
 import os
@@ -52,18 +52,26 @@ if Lista_entrada:
 else:
     print "Las acciones no se han realizado"     
 
-
 #Listar las capas de salida cortadas
 arcpy.env.workspace = salida
 Lista_salida = arcpy.ListFeatureClasses()
 
-#Abrimos el archivo en modo escritura, que como no existe lo crea.
+#Abrir el archivo en modo escritura, que como no existe lo crea.
 salida = open ("D:\\Programacion\\Avanzada\\ListadoSalida.txt", "w") 
 for capa in Lista_salida:
     salida.write(capa)
     salida.write("\n")
 
 salida.close () #Cerrar el directorio de salida
+
+######################################################################################################################
+#Tiempo de ejecución del proceso
+tiempo_inicial = time.time() #Cuenta el tiempo de ejecución 
+tiempo_final = time.time() # Cuenta el tiempo final de ejecución.
+tiempo_empleado = tiempo_final - tiempo_inicial #Diferencia de tiempo de ejecución. 
+print "El tiempo al comienzo ha sido de: ", tiempo_inicial, "segundos"
+print "El tiempo al final ha sido de: ", tiempo_final, "segundos"
+print "El programa ha tardado: ", tiempo_empleado, "segundos"
 
 #####################################################################################################################
 ################################################## FINISH RUN #######################################################

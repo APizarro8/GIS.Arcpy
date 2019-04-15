@@ -1,18 +1,20 @@
 # -*- coding: utf-8 -*-
-#Ejercicio 2 practica 1. 
-#Proposito: Crear un script para presentarlo como herramienta en ArcGIS. 
+##PROGRAMACIÓN AVANZADA  
+#Propósito: Crear un script para presentarlo como herramienta en ArcGIS. 
 #Autor: Alicia Pizarro
 #Fecha: 25/01/2018
 
+## IMPORTACIÓN DE LIBRERÍAS 
 import arcpy
 import os
-
 #Sobreescribir si es necesario
 arcpy.env.overwriteOutput = True 
 
-#Establecer los par�metros de entrada de la herramienta
-arcpy.env.workspace = arcpy.GetParameterAsText(0) #Directorio donde se guardan las capas del BCN #Directorio donde se guardan las capas del BCN
-zona_estudio = arcpy.GetParameterAsText(1) #Capa limite de zona de estudio
+#######################################################################################################################
+##CREACIÓN DE LA HERRAMIENTA 
+#Establecer los parámetros de entrada de la herramienta
+arcpy.env.workspace = arcpy.GetParameterAsText(0) #Directorio donde se guardan las capas del BCN
+zona_estudio = arcpy.GetParameterAsText(1) #Capa límite de zona de estudio
 salida = arcpy.GetParameterAsText(2) #Directorio de salida 
 Lista_entrada = arcpy.GetParameterAsText(3) #Archivo de texto donde se guardarán los datos del directorio de entrada
 Lista_salida = arcpy.GetParameterAsText(4) #Archivo de texto donde se guardarán los datos del directorio de salida
@@ -20,7 +22,6 @@ Lista_salida = arcpy.GetParameterAsText(4) #Archivo de texto donde se guardarán
 #Listar capas entrada
 Lista_entrada = arcpy.ListFeatureClasses() #Listar las capas
 
-    
 #Abrirmos el archivo en modo escritura, que como no existe lo crea.
 entrada = open ("D:\\Programacion\\Avanzada\\ListadoEntrada.txt", "w") 
 for capa in Lista_entrada:
@@ -63,3 +64,6 @@ for capa in Lista_salida:
     salida.write("\n")
 
 salida.close () #Cerrar el directorio de salida
+
+#####################################################################################################################
+################################################## FINISH RUN #######################################################

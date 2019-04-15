@@ -1,14 +1,17 @@
-# -*- coding: utf-8 -*-
-#Ejercicio 2 practica 1. 
+# -*- coding: utf-8 -*- 
 #Proposito: Crear un script para presentarlo como herramienta en ArcGIS. 
 #Autor: Alicia Pizarro
 #Fecha: 25/01/2018
 
+#####################################################################################################################
+##IMPORTACIÓN DE LIBRERÍAS 
 import arcpy
 import os
 
-arcpy.env.overwriteOutput = True #Sobreescribir si es necesario
+#Sobreescribir si es necesario
+arcpy.env.overwriteOutput = True 
 
+#####################################################################################################################
 #Establecer directorio de trabajo
 arcpy.env.workspace = "xxxDATAxxxx"
 zona_Localiza = os.path.join(arcpy.env.workspace, "\\zona_Localiza.shp")

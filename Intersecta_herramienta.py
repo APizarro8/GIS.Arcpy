@@ -20,9 +20,9 @@ Lista_entrada = arcpy.GetParameterAsText(3) #Archivo de texto donde se guardará
 Lista_salida = arcpy.GetParameterAsText(4) #Archivo de texto donde se guardarán los datos del directorio de salida
 
 #Listar capas entrada
-Lista_entrada = arcpy.ListFeatureClasses() #Listar las capas
+Lista_entrada = arcpy.ListFeatureClasses()
 
-#Abrirmos el archivo en modo escritura, que como no existe lo crea.
+#Abrir el archivo en modo escritura, que como no existe lo crea.
 entrada = open ("D:\\Programacion\\Avanzada\\ListadoEntrada.txt", "w") 
 for capa in Lista_entrada:
     entrada.write(capa)

@@ -46,7 +46,7 @@ for capa in Lista_capas_salida:
     print Lista_capas_salida
     print '=' * 50
 
-#Abrimos el archivo en modo escritura, que como no existe lo crea.
+#AbriR el archivo en modo escritura, que como no existe lo crea.
 out_data_clip = open ("\\ListadoSalida.txt", "w") 
 for capa in Lista_capas_salida:
     out_data_clip.write(capa)

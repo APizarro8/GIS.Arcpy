@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#ASGINATURA: PROGRAMACIÓN AVANZADA
 #Ejercicio 3 practica 1. 
 #Propósito: La finalidad de esta práctica ha sido desarrollar un script que crease una herramienta para ArcGIS que localizase
 #una zona en concreto, donde las diferentes variables de entrada se han recortado corforme a la capa de entrada, 

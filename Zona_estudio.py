@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#Asignatura: PROGRAMACION AVANZADA
 #Ejercicio 1 practica 1. 
 #Proposito:  A partir de la capa Municipios.shp obtener la zona de estudio pedida, Zona_estudio, creando un cursor de 
 #actualización con la condición de que deben eliminarse todos los registros en el que el campo “zona” no sea Municipio de 
@@ -8,7 +7,7 @@
 #Fecha: 29/01/2018
 
 #############################################################################################################################
-#IMPORTACION DE MODULOS
+#IMPORTACIÓN DE MÓDULOS
 import os
 import arcpy
 import traceback
@@ -24,7 +23,7 @@ salida = os.path.join(entrada,"xxDATAxxSALIDAxx")
 if not os.path.exists(salida): #Si el directorio no existe, lo crea.
     os.mkdir(salida)
 
-#Variable de entrada sobre la cual se obtiene la zona de estudio
+#Variable de entrada sobre la cuál se obtiene la zona de estudio
 municipio = os.path.join(entrada,"xxCAPAxxRECORTE.shp")
 
 #Obtener la zona de estudio eliminando aquellos registros que se correspondan con municipios cuyo campo 'Zona' sea:
@@ -45,12 +44,12 @@ try:
     print '=' * 50
 
 ##############################################################################################################################
-#GESTION DE ERRORES  
+#GESTIÓN DE ERRORES  
 except:
     arcpy.GetMessages()
     traceback.print_exc()
     
-#TIEMPO DE EJECUCION DEL PROCESO
+#TIEMPO DE EJECUCIÓN DEL PROCESO
 tiempo_inicial = time.time() #Cuenta el tiempo de ejecución 
 tiempo_final = time.time() # Cuenta el tiempo final de ejecución.
 tiempo_empleado = tiempo_final - tiempo_inicial #Diferencia de tiempo de ejecución. 

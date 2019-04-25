@@ -7,6 +7,7 @@
 ## IMPORTACIÓN DE LIBRERÍAS 
 import arcpy
 import os
+
 #Sobreescribir si es necesario
 arcpy.env.overwriteOutput = True 
 
@@ -23,7 +24,7 @@ Lista_salida = arcpy.GetParameterAsText(4) #Archivo de texto donde se guardarán
 Lista_entrada = arcpy.ListFeatureClasses()
 
 #Abrir el archivo en modo escritura, que como no existe lo crea.
-entrada = open ("D:\\Programacion\\Avanzada\\ListadoEntrada.txt", "w") 
+entrada = open ("xxxDATAxxx", "w") 
 for capa in Lista_entrada:
     entrada.write(capa)
     entrada.write("\n")
@@ -57,7 +58,7 @@ arcpy.env.workspace = salida
 Lista_salida = arcpy.ListFeatureClasses()
 
 #Abrir el archivo en modo escritura, que como no existe lo crea.
-salida = open ("D:\\Programacion\\Avanzada\\ListadoSalida.txt", "w") 
+salida = open ("xxDATAxx", "w") 
 for capa in Lista_salida:
     salida.write(capa)
     salida.write("\n")

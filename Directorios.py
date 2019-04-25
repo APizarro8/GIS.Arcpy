@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
-#Ejercicio 1 
-#Propósito: Uso de módulos "arcpy" y "os" de la biblioteca estándar de Python para obtener un listado de archivos creando sólo una copia de los archivos de tipo texto en otro directorio.  
+# -*- coding: utf-8 -*- 
+#Propósito: Uso de módulos "arcpy" y "os" de la biblioteca estándar de Python para obtener un listado de archivos 
+#creando sólo una copia de los archivos de tipo texto en otro directorio.  
 #Autor: Alicia Pizarro
 #Fecha: 27/10/2017
 
@@ -9,8 +9,8 @@ import os
 
 lstArchivos = []
 
-arcpy.env.workspace = 'C:/datosInEj1Pract2'
-dirDest = 'C:/datosOutEj1Pract2/' #Variable para la ruta al directorio
+arcpy.env.workspace = 'xxDATAxx'
+dirDest = 'xxDATAxx' #Variable para la ruta al directorio
 lstArchivos = os.listdir(arcpy.env.workspace)        
 
 for nomArch in lstArchivos:

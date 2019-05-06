@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#Ejercicio 1 practica 1. 
 #Proposito:  A partir de la capa Municipios.shp obtener la zona de estudio pedida, Zona_estudio, creando un cursor de 
 #actualización con la condición de que deben eliminarse todos los registros en el que el campo “zona” no sea Municipio de 
 #Madrid o Norte Metropolitano o Este Metropolitano o Sur Metropolitano u Oeste Metropolitano.

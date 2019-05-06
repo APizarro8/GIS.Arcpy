@@ -4,9 +4,11 @@
 #Autor: Alicia Pizarro
 #Fecha: 27/10/2017
 
+# IMPORTACIÓN DE MÓDULOS 
 import arcpy
 import os
 
+## CREAR UNA LISTA PARA GUARDAR LOS DIRECCTORIOS 
 lstArchivos = []
 
 arcpy.env.workspace = 'xxDATAxx'
